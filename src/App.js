@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <a>Some sort of placeholder...</a>
+          <h1>Some sort of placeholder...</h1>
         </header>
       </div>
     );
