@@ -1,13 +1,14 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Home } from "./containerComponents/Home";
+import "semantic-ui-css/semantic.min.css";
 import "./styles/App.css";
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Some sort of placeholder...</h1>
-      </header>
-    </div>
+    <Router>
+      <Route exact path="/" component={Home} />
+    </Router>
   );
 };
 
