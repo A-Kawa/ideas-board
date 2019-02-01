@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './styles/App.css';
 
-class App extends Component {
-  render() {
+const App = () => {
+  
     return (
       <div className="App">
         <header className="App-header">
@@ -10,7 +10,7 @@ class App extends Component {
         </header>
       </div>
     );
-  }
+  
 }
 
 export default App;
