@@ -8,4 +8,11 @@
   -webkit-text-stroke-width: 0.2px;
   background-color: #5379b6;
   min-height: 50px;
+
+  //Do not select text
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
