@@ -12,6 +12,8 @@ export const Provider = props => {
           fetch(apiAdress)
             .then(res => res.json().then(json => setState(json)))
             .catch(err => {
+              // eslint-disable-next-line no-console
+              console.log(err);
               setState("Error");
             });
         }
