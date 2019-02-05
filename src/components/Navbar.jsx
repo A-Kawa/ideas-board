@@ -1,5 +1,6 @@
 import React from "react";
+import { CategorySelector } from "./CategorySelector";
 
 export const Navbar = () => {
-  return <h1>Here will be Navbar</h1>;
+  return <CategorySelector />;
 };

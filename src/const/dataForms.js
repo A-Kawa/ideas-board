@@ -1,4 +1,5 @@
 export const mainForm = {
+  category: "Done",
   parentForm: [
     {
       title: "",
