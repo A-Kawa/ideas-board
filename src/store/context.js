@@ -9,7 +9,11 @@ export const Provider = props => {
       value={{
         myState,
         getFromDB: () => {
-          fetch(apiAdress).then(res => res.json().then(json => setState(json)));
+          fetch(apiAdress)
+            .then(res => res.json().then(json => setState(json)))
+            .catch(err => {
+              setState("Error");
+            });
         }
       }}
     >
