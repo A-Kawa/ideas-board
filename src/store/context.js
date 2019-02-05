@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { apiAdress } from "../const/dataForms";
 export const Context = React.createContext();
 
 export const Provider = props => {
@@ -9,7 +9,7 @@ export const Provider = props => {
       value={{
         myState,
         getFromDB: () => {
-          setState([]);
+          fetch(apiAdress).then(res => res.json().then(json => setState(json)));
         }
       }}
     >
