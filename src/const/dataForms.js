@@ -7,3 +7,7 @@ export const mainForm = {
     }
   ]
 };
+
+export const categories = {
+  category: ["Done", "ToDo", "Suspended"]
+};

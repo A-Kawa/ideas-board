@@ -1,1 +1,1 @@
-export const headerName = "Ideas board";
+export const headerName = "Ideas Board";
