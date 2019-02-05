@@ -1,16 +1,15 @@
 import React, { useState } from "react";
-import { mainForm } from "../const/dataForms";
 
 export const Context = React.createContext();
 
 export const Provider = props => {
-  const [myState, setState] = useState([mainForm]);
+  const [myState, setState] = useState([]);
   return (
     <Context.Provider
       value={{
         myState,
-        getFromDB: data => {
-          setState(data);
+        getFromDB: () => {
+          setState([]);
         }
       }}
     >
