@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Header } from "./Header";
 import { Context } from "../store/context";
 import { LoaderSpinner } from "../components/LoaderSpinner";
-import { errorStyle } from "../const/errorStyle";
+import { errorStyle } from "../const/componentStyles";
 
 export const Home = () => {
   const context = useContext(Context);
