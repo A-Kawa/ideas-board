@@ -4,10 +4,10 @@ import { Button } from "semantic-ui-react";
 
 export const Navbar = () => {
   return (
-    <div>
+    <div className="navbar">
       <CategorySelector />
-      <Button icon="save" content="Save All" />
-      <Button icon="plus circle" content="Add" />
+      <Button className="button-save" icon="save" content="Save All" />
+      <Button className="button-add" icon="plus circle" content="Add" />
     </div>
   );
 };
