@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .button.ui.mini.button.button-save {
+    margin: -1.5vh 1vw 0px 1vw;
+  }
+  .button.ui.mini.button.button-add {
+    margin: -1.5vh 1vw 0px 1vw;
+  }
+}
