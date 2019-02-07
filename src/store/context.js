@@ -4,10 +4,12 @@ export const Context = React.createContext();
 
 export const Provider = props => {
   const [myState, setState] = useState([]);
+  const [category, setCategory] = useState("unselected");
   return (
     <Context.Provider
       value={{
         myState,
+        category,
         getFromDB: () => {
           fetch(apiAdress)
             .then(res => res.json().then(json => setState(json)))
@@ -16,6 +18,9 @@ export const Provider = props => {
               console.log(err);
               setState("Error");
             });
+        },
+        changeCategory: value => {
+          setCategory(value);
         }
       }}
     >
