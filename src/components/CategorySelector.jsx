@@ -4,8 +4,8 @@ import { categories } from "../const/dataForms";
 
 export const CategorySelector = () => {
   return (
-    <Menu size="small" vertical className="menu">
-      <Dropdown item text="Categories" className="dropdown">
+    <Menu size="small" className="menu">
+      <Dropdown item text="Category" className="dropdown">
         <Dropdown.Menu className="dropdown-menu">
           {categories.category.map(item => {
             return (
