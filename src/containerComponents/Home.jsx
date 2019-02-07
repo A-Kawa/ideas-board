@@ -7,7 +7,6 @@ import { IdeasList } from "../components/IdeasList";
 
 export const Home = () => {
   const context = useContext(Context);
-  console.log(context.myState);
 
   useEffect(() => {
     context.getFromDB();
