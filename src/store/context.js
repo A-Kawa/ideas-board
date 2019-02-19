@@ -21,6 +21,19 @@ export const Provider = props => {
         },
         changeCategory: value => {
           setCategory(value);
+        },
+        changeCategorySingleElement: (newValue, element) => {
+          console.log(newValue, element);
+          let newElement = {
+            category: newValue,
+            description: element.description,
+            title: element.title,
+            _v: element._v,
+            _id: element._id
+          };
+          Object.assign(...myState, newElement); //here will be connection to end point ;)
+          console.log(newElement);
+          console.log(myState);
         }
       }}
     >

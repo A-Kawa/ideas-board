@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { setProperName } from "../utils/_properNameForSingleComponentMenu";
+import { setColor } from "../utils/_setColor";
+import { setActiveCategory } from "../utils/_setActive";
+import { Context } from "../store/context";
 import { Divider, Form, TextArea, Grid, Button, Menu } from "semantic-ui-react";
 
 const categoryColors = ["orange", "green", "yellow"];
 
 export const SingleComponent = props => {
-  const [active, setActive] = useState(categoryColors[0]);
+  const context = useContext(Context);
+  const [active] = useState(props.props.category);
   console.log(props);
+  console.log(props.props.category);
   return (
     <div className="SingleElement">
       <Form>
@@ -25,15 +31,20 @@ export const SingleComponent = props => {
           </Grid.Row>
           <Grid.Row>
             <Menu>
+              {/*later move to separate file*/}
               {categoryColors.map(color => (
                 <Menu.Item
                   key={color}
-                  name={color}
-                  active={active === color}
-                  color={color}
+                  name={setProperName(color)}
+                  active={active === setActiveCategory(color)}
+                  color={setColor(props.props.category)}
                   onClick={(e, { name }) => {
-                    console.log(name);
-                    setActive(name);
+                    console.log(
+                      context.changeCategorySingleElement(
+                        setActiveCategory(color),
+                        props.props
+                      )
+                    );
                   }}
                 />
               ))}
