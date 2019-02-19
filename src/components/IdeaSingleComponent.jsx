@@ -1,41 +1,18 @@
-import React from "react";
-import {
-  Divider,
-  Form,
-  TextArea,
-  Grid,
-  Button,
-  Dropdown,
-  Menu
-} from "semantic-ui-react";
+import React, { useState } from "react";
+import { Divider, Form, TextArea, Grid, Button, Menu } from "semantic-ui-react";
 
-import { categories } from "../const/dataForms";
+const categoryColors = ["orange", "green", "yellow"];
 
 export const SingleComponent = props => {
+  const [active, setActive] = useState(categoryColors[0]);
   console.log(props);
   return (
     <div className="SingleElement">
       <Form>
         <Grid>
-          <Grid.Row columns={3}>
+          <Grid.Row columns={2}>
             <Grid.Column mobile={8}>
               <input type="text" placeholder="Title" />
-            </Grid.Column>
-            <Grid.Column>
-              {/* To delete, placeholder for now...*/}
-              <Menu size="small" className="menu">
-                <Dropdown item text="Category" className="dropdown">
-                  <Dropdown.Menu className="dropdown-menu">
-                    {categories.category.map(item => {
-                      return (
-                        <Dropdown.Item className="dropdown-item" key={item}>
-                          {item}
-                        </Dropdown.Item>
-                      );
-                    })}
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Menu>
             </Grid.Column>
             <Grid.Column mobile={1}>
               <Button color="red" icon="minus" />
@@ -45,6 +22,22 @@ export const SingleComponent = props => {
             <Grid.Column width={16}>
               <TextArea autoHeight placeholder="Description" />
             </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Menu>
+              {categoryColors.map(color => (
+                <Menu.Item
+                  key={color}
+                  name={color}
+                  active={active === color}
+                  color={color}
+                  onClick={(e, { name }) => {
+                    console.log(name);
+                    setActive(name);
+                  }}
+                />
+              ))}
+            </Menu>
           </Grid.Row>
         </Grid>
         <Divider />

@@ -15,7 +15,7 @@ export const Provider = props => {
             .then(res => res.json().then(json => setState(json)))
             .catch(err => {
               // eslint-disable-next-line no-console
-              console.log(err);
+              console.error(err);
               setState("Error");
             });
         },
