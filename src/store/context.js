@@ -24,13 +24,10 @@ export const Provider = props => {
         },
         changeSingleElement: (object, index) => {
           setState(
-            Object.assign(
-              [...myState],
-              Object.assign(
-                ...myState,
-                (myState[index] = Object.assign({}, object))
-              )
-            )
+            Object.values({
+              ...myState,
+              ...{ [index]: { ...myState[index], ...object } }
+            })
           );
         }
       }}
