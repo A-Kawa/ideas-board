@@ -17,7 +17,20 @@ export const SingleComponent = props => {
         <Grid>
           <Grid.Row columns={2}>
             <Grid.Column mobile={8}>
-              <input type="text" placeholder="Title" />
+              <input
+                type="text"
+                value={props.props.title}
+                placeholder="Title"
+                onChange={e => {
+                  context.changeSingleElement(
+                    Object.assign(
+                      { ...props.props },
+                      { title: e.target.value }
+                    ),
+                    context.myState.indexOf(props.props)
+                  );
+                }}
+              />
             </Grid.Column>
             <Grid.Column mobile={1}>
               <Button color="red" icon="minus" />
@@ -25,7 +38,20 @@ export const SingleComponent = props => {
           </Grid.Row>
           <Grid.Row columns={1}>
             <Grid.Column width={16}>
-              <TextArea autoHeight placeholder="Description" />
+              <TextArea
+                autoHeight
+                value={props.props.description}
+                onChange={e => {
+                  context.changeSingleElement(
+                    Object.assign(
+                      { ...props.props },
+                      { description: e.target.value }
+                    ),
+                    context.myState.indexOf(props.props)
+                  );
+                }}
+                placeholder="Description"
+              />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
@@ -39,9 +65,12 @@ export const SingleComponent = props => {
                   color={setColor(props.props.category)}
                   onClick={(e, { name }) => {
                     setActive(setActiveCategory(color));
-                    context.changeCategorySingleElement(
-                      setActiveCategory(color),
-                      props.props,
+
+                    context.changeSingleElement(
+                      Object.assign(
+                        { ...props.props },
+                        { category: setActiveCategory(color) }
+                      ),
                       context.myState.indexOf(props.props)
                     );
                   }}

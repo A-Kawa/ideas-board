@@ -22,16 +22,16 @@ export const Provider = props => {
         changeCategory: value => {
           setCategory(value);
         },
-        changeCategorySingleElement: (newValue, element, index) => {
-          let newElement = Object.assign(
-            { ...element },
-            { category: newValue }
+        changeSingleElement: (object, index) => {
+          setState(
+            Object.assign(
+              [...myState],
+              Object.assign(
+                ...myState,
+                (myState[index] = Object.assign({}, object))
+              )
+            )
           );
-
-          let copy = Object.assign([], [...myState]);
-          copy[index] = Object.assign({}, newElement);
-          //here will be connection to end point ;)
-          setState(copy);
         }
       }}
     >
