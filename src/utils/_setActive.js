@@ -7,6 +7,7 @@ export const setActiveCategory = active => {
     case "green":
       return "Done";
     default:
+      //eslint-disable-next-line
       console.error("Unexpected error in setColor");
   }
 };

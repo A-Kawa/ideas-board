@@ -4,6 +4,7 @@ import { SingleComponent } from "./IdeaSingleComponent";
 
 export const IdeasList = () => {
   const context = useContext(Context);
+
   return (
     <div className="idea">
       {context.myState.map(element => {

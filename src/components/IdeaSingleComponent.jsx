@@ -9,9 +9,8 @@ const categoryColors = ["orange", "green", "yellow"];
 
 export const SingleComponent = props => {
   const context = useContext(Context);
-  const [active] = useState(props.props.category);
-  console.log(props);
-  console.log(props.props.category);
+  const [active, setActive] = useState(props.props.category);
+
   return (
     <div className="SingleElement">
       <Form>
@@ -39,11 +38,11 @@ export const SingleComponent = props => {
                   active={active === setActiveCategory(color)}
                   color={setColor(props.props.category)}
                   onClick={(e, { name }) => {
-                    console.log(
-                      context.changeCategorySingleElement(
-                        setActiveCategory(color),
-                        props.props
-                      )
+                    setActive(setActiveCategory(color));
+                    context.changeCategorySingleElement(
+                      setActiveCategory(color),
+                      props.props,
+                      context.myState.indexOf(props.props)
                     );
                   }}
                 />

@@ -7,6 +7,7 @@ export const setColor = name => {
     case "Done":
       return "green";
     default:
+      //eslint-disable-next-line
       console.error("Unexpected error in setColor");
   }
 };
