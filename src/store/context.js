@@ -26,7 +26,7 @@ export const Provider = props => {
           setState(
             Object.values({
               ...myState,
-              ...{ [index]: { ...myState[index], ...object } }
+              ...{ [index]: object }
             })
           );
         }
