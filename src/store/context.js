@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { apiAdress } from "../const/dataForms";
+import { apiAdress, mainForm } from "../const/dataForms";
 export const Context = React.createContext();
 
 export const Provider = props => {
@@ -29,6 +29,9 @@ export const Provider = props => {
               ...{ [index]: object }
             })
           );
+        },
+        addElement: () => {
+          setState([...myState, mainForm]);
         }
       }}
     >

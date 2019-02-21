@@ -8,7 +8,12 @@ export const IdeasList = () => {
   return (
     <div className="idea">
       {context.myState.map(element => {
-        return <SingleComponent key={element._id} props={element} />;
+        return (
+          <SingleComponent
+            key={element._id ? element._id : context.myState.indexOf(element)}
+            props={element}
+          />
+        );
       })}
     </div>
   );

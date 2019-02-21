@@ -1,12 +1,7 @@
 export const mainForm = {
-  category: "Done",
-  parentForm: [
-    {
-      title: "",
-      description: "",
-      category: ""
-    }
-  ]
+  title: "",
+  description: "",
+  category: "Done"
 };
 
 export const categories = {
