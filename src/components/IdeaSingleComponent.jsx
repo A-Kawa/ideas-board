@@ -33,7 +33,13 @@ export const SingleComponent = props => {
               />
             </Grid.Column>
             <Grid.Column mobile={1}>
-              <Button color="red" icon="minus" />
+              <Button
+                onClick={() => {
+                  context.deleteElement(props.props);
+                }}
+                color="red"
+                icon="minus"
+              />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row columns={1}>

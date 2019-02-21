@@ -32,6 +32,13 @@ export const Provider = props => {
         },
         addElement: () => {
           setState([...myState, mainForm]);
+        },
+        deleteElement: element => {
+          setState(
+            myState.filter(el => {
+              return el !== element;
+            })
+          );
         }
       }}
     >
