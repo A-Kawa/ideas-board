@@ -5,7 +5,7 @@ export const mainForm = {
 };
 
 export const categories = {
-  category: ["Done", "ToDo", "Suspended"]
+  category: ["Done", "ToDo", "Suspended", "All"]
 };
 
 export const apiAdress = "http://localhost:3001/api/ideas";

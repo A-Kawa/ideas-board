@@ -4,7 +4,7 @@ export const Context = React.createContext();
 
 export const Provider = props => {
   const [myState, setState] = useState([]);
-  const [category, setCategory] = useState("unselected");
+  const [category, setCategory] = useState("All");
   return (
     <Context.Provider
       value={{

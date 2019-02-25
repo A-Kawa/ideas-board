@@ -8,13 +8,31 @@ export const IdeasList = () => {
   return (
     <div className="idea">
       {context.myState.map(element => {
-        return (
-          <SingleComponent
-            key={element._id ? element._id : context.myState.indexOf(element)}
-            props={element}
-          />
-        );
+        if (context.category === "All") {
+          return (
+            <SingleComponent
+              key={element._id ? element._id : context.myState.indexOf(element)}
+              props={element}
+            />
+          );
+        } else {
+          if (context.category === element.category) {
+            return (
+              <SingleComponent
+                key={
+                  element._id ? element._id : context.myState.indexOf(element)
+                }
+                props={element}
+              />
+            );
+          }
+        }
+        return <div key={element._id} />;
       })}
     </div>
   );
 };
+/*  <SingleComponent
+            key={element._id ? element._id : context.myState.indexOf(element)}
+            props={element}
+          />*/
