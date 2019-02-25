@@ -11,5 +11,5 @@
 
   "files.autoSave": "onFocusChange",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "window.zoomLevel": -1
+  "window.zoomLevel": 0
 }

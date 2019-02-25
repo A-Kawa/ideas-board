@@ -32,7 +32,3 @@ export const IdeasList = () => {
     </div>
   );
 };
-/*  <SingleComponent
-            key={element._id ? element._id : context.myState.indexOf(element)}
-            props={element}
-          />*/
