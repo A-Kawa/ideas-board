@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/context";
 import { SingleComponent } from "./IdeaSingleComponent";
+import { setProperKey } from "../utils/_setProperKey";
 
 export const IdeasList = () => {
   const context = useContext(Context);
@@ -11,7 +12,7 @@ export const IdeasList = () => {
         if (context.category === "All") {
           return (
             <SingleComponent
-              key={element._id ? element._id : context.myState.indexOf(element)}
+              key={setProperKey(context.myState.indexOf(element), element._id)}
               props={element}
             />
           );
@@ -19,9 +20,10 @@ export const IdeasList = () => {
           if (context.category === element.category) {
             return (
               <SingleComponent
-                key={
-                  element._id ? element._id : context.myState.indexOf(element)
-                }
+                key={setProperKey(
+                  context.myState.indexOf(element),
+                  element._id
+                )}
                 props={element}
               />
             );

@@ -8,4 +8,7 @@ export const categories = {
   category: ["Done", "ToDo", "Suspended", "All"]
 };
 
-export const apiAdress = "http://localhost:3001/api/ideas";
+export const apiAdressGet = "http://localhost:3001/api/ideas";
+export const apiAdressChange = "http://localhost:3001/api/ideas/edit";
+export const apiAdressAdd = "http://localhost:3001/api/ideas/add";
+export const apiAdressDelete = "http://localhost:3001/api/ideas/delete";

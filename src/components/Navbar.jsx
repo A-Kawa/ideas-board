@@ -10,12 +10,6 @@ export const Navbar = () => {
     <div className="navbar">
       <CategorySelector />
       <Button
-        className="button-save"
-        size="mini"
-        icon="save"
-        content="Save All"
-      />
-      <Button
         className="button-add"
         size="mini"
         icon="plus circle"

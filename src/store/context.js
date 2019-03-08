@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { apiAdress, mainForm } from "../const/dataForms";
+import { apiAdressGet, mainForm } from "../const/dataForms";
 export const Context = React.createContext();
 
 export const Provider = props => {
@@ -11,7 +11,7 @@ export const Provider = props => {
         myState,
         category,
         getFromDB: () => {
-          fetch(apiAdress)
+          fetch(apiAdressGet)
             .then(res => res.json().then(json => setState(json)))
             .catch(err => {
               // eslint-disable-next-line no-console
@@ -23,6 +23,7 @@ export const Provider = props => {
           setCategory(value);
         },
         changeSingleElement: (object, index) => {
+          console.log(object, index);
           setState(
             Object.values({
               ...myState,
